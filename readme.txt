@@ -1,7 +1,7 @@
 === Frontend Checklist ===
 Contributors: jonasbreuer
 Donate link: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
-Tags: cchecklist, frontend, todo, to-do, list
+Tags: checklist, frontend, todo, to-do, list
 Requires at least: 2.5
 Tested up to: 3.4.1
 Stable tag: trunk
