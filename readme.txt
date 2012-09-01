@@ -1,7 +1,7 @@
 === Frontend Checklist ===
 Contributors: jonasbreuer
 Donate link: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
-Tags: checklist, frontend, todo, to-do, list
+Tags: checklist, frontend, todo, to-do, list, checkliste, liste, aufgaben
 Requires at least: 2.5
 Tested up to: 3.4.1
 Stable tag: trunk
@@ -27,10 +27,10 @@ Wie immer.
 
 1. Lade das Verzeichnis `frontend-checklist` in `/wp-content/plugins/` hoch (oder installiere das Plugin über den Plugin-Manager von Wordpress)
 2. Aktiviere das Plugin über den Plugin-Manager von Wordpress.
-3. Unter Einstellungen gibt es jetzt den neuen Punkt `Frontend Checlist`, wo du die einzelnen Punkte der Checkliste definieren kannst.
-4. Zum Ausgeben der HTML Checkliste einfach den Tag [frontend-checklist] im Editor an der gewünschten Stelle eingeben.
-5. Sollen die abgehakten ToDos nicht gespeichert werden, kann dieser Code benutzt werden: [frontend-checklist cookie="off"]
-6. Link auf eine PDF-Checkliste: [frontend-checklist type="pdf" title="Meine Checkliste" linktext="Zur Checkliste"]. Der Title erscheint in der PDF-Datei als Überschrift. 
+3. Unter Einstellungen gibt es jetzt den neuen Punkt `Frontend Checklist`, wo du die einzelnen Punkte der Checkliste definieren kannst.
+4. Zum Ausgeben der HTML Checkliste einfach den Tag `[frontend-checklist]` im Editor an der gewünschten Stelle eingeben.
+5. Sollen die abgehakten ToDos nicht gespeichert werden, kann dieser Code benutzt werden: `[frontend-checklist cookie="off"]`
+6. Link auf eine PDF-Checkliste: `[frontend-checklist type="pdf" title="Meine Checkliste" linktext="Zur Checkliste"]`. Der Title erscheint in der PDF-Datei als Überschrift. 
 
 
 == Screenshots ==
