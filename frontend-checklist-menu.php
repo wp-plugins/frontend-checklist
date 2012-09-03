@@ -25,6 +25,10 @@ class Frontend_Checklist_Menu {
 		add_options_page('Frontend Checklist', 'Frontend Checklist', 'manage_options', 'frontend-checklist', array('Frontend_Checklist_Menu', 'optionsPage'));
 	}
 	
+	static public function optionsMainText() {
+		//no more output required, this is just a dummy callback for the add_settings_section()
+	}
+	
 	
 	static public function optionsPage() {
 		?>
@@ -49,7 +53,11 @@ class Frontend_Checklist_Menu {
 
 	static public function ToDoField() {
 		$options = get_option('frontend-checklist-options');
-		echo '<input type="text" name="frontend-checklist-options[]" size="60" value="'.$options[self::$checklist_count].'" />';
+		
+		if (isset($options[self::$checklist_count])) $default_value = $options[self::$checklist_count];
+		else $default_value = '';
+		
+		echo '<input type="text" name="frontend-checklist-options[]" size="60" value="'.$default_value.'" />';
 		self::$checklist_count += 1;
 	}
 	

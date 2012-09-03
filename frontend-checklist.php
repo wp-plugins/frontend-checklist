@@ -5,8 +5,8 @@ PLUGIN URI: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 DESCRIPTION: Mit Frontend Checklist kannst du eine HTML- oder PDF-Checkliste für deine Besucher erzeugen. Der Status der HTML-Checkliste kann per Cookie gespeichert werden. So können deine Besucher jedezeit zurückkehren und die Checkliste weiter abhaken.
 AUTHOR: Jonas Breuer
 AUTHOR URI: http://www.j-breuer.de
-VERSION: 0.2.0
-Min WP Version: 2.5
+VERSION: 0.3.0
+Min WP Version: 2.8
 Max WP Version: 3.4.1
 License: GPL3
 */
@@ -35,15 +35,13 @@ include_once("frontend-checklist-menu.php");
 
 add_action('wp_enqueue_scripts', array('Frontend_Checklist', 'add_js'));
 add_shortcode( 'frontend-checklist', array('Frontend_Checklist', 'output') );
-
+register_uninstall_hook(__FILE__, array('Frontend_Checklist', 'uninstall'));
+ 
 
 
 class Frontend_Checklist {
 
-	public static function add_js() {
-		wp_enqueue_script('frontend-checklist', plugins_url('frontend-checklist.js', __FILE__));
-	}
-
+	
 	public static function output($atts) {
 		$output = '';
 		$options = get_option('frontend-checklist-options');
@@ -78,6 +76,16 @@ class Frontend_Checklist {
 			}
 		}
 		return $output;
+	}
+	
+	
+	public static function add_js() {
+		wp_enqueue_script('frontend-checklist', plugins_url('frontend-checklist.js', __FILE__));
+	}
+	
+	
+	static public function uninstall()  {
+		delete_option('frontend-checklist-options');
 	}
 
 

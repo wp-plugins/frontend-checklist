@@ -2,7 +2,7 @@
 Contributors: jonasbreuer
 Donate link: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 Tags: checklist, frontend, todo, to-do, list, checkliste, liste, aufgaben
-Requires at least: 2.5
+Requires at least: 2.8
 Tested up to: 3.4.1
 Stable tag: trunk
 License: GPLv3 or later
@@ -41,6 +41,11 @@ Wie immer.
 
 == Changelog ==
 
+= 0.3.0 =
+* Kleine Bugfixes
+* Deinstallationsroutine hinzugefügt
+* Support für WP < 2.8 entfernt
+
 = 0.2.0 =
 * Implementierung der PDF-Checkliste
 * Hinzufügen von Attributen, um die Ausgabe der Checkliste zu konfigurieren
@@ -50,5 +55,8 @@ Wie immer.
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 0.3.0 =
+Plugin hinterlässt bei Deinstallation keine Rückstände mehr und die PHP-Warnung ist behoben.
+
+= 0.2.0 =
 Ein Update ist nur nötig, wenn PDF-Checklisten oder die Deaktivierung der Speicherung per Cookie benötigt werden.
