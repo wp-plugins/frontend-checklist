@@ -25,7 +25,7 @@ If you have questions or problems, just leave a comment on the [Plugin page](htt
 
 = DE: =
 
-Mit Frontend Checklist kannst du eine HTML- oder PDF-Checkliste für deine Besucher erzegen. Der Status der HTML-Checkliste kann per Cookie gespeichert werden. So können deine Besucher jedezeit zurückkehren und die Checkliste weiter abhaken.
+Mit Frontend Checklist kannst du eine HTML- oder PDF-Checkliste für deine Besucher erzeugen. Der Status der HTML-Checkliste kann per Cookie gespeichert werden. So können deine Besucher jederzeit zurückkehren und die Checkliste weiter abhaken.
 
 Ein [Live-Beispiel der Checkliste](http://www.transsib-tipps.de/reise-organisation/transsib-checkliste/) kann auf meiner Seite zur Transsibirischen Eisenbahn angesehen werden.
 
@@ -39,6 +39,7 @@ Bei Fragen oder Problemen hinterlasse einfach einen Kommentar auf der [Plugin Se
 = EN: =
 
 As usual.
+
 1. Upload the directory `frontend-checklist` in `/wp-content/plugins/` (or install the plugin over the plugin manager of Wordpress)
 2. Activate the plugin over the plugin manager of Wordpress
 3. On the Settings menu is now a new entry `Frontend Checklist`, where you can define the To-Dos.
@@ -68,7 +69,7 @@ DE: Leider nicht. Der Cookie bekommt Probleme bei mehr als 50 To-Dos.
 
 == Screenshots ==
 
-1. Frontend Checklist Backend
+1. Configure Frontend Checklist
 2. HTML-Checklist
 3. PDF-Checklist
 
