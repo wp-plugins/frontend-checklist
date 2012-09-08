@@ -5,9 +5,9 @@ PLUGIN URI: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 DESCRIPTION: Mit Frontend Checklist kannst du eine HTML- oder PDF-Checkliste für deine Besucher erzeugen. Der Status der HTML-Checkliste kann per Cookie gespeichert werden. So können deine Besucher jedezeit zurückkehren und die Checkliste weiter abhaken.
 AUTHOR: Jonas Breuer
 AUTHOR URI: http://www.j-breuer.de
-VERSION: 0.3.0
+VERSION: 1.0.0
 Min WP Version: 2.8
-Max WP Version: 3.4.1
+Max WP Version: 3.4.2
 License: GPL3
 */
 
@@ -32,11 +32,13 @@ You should have received a copy of the GNU General Public License
 include_once("frontend-checklist-menu.php");
 
 
-
+add_shortcode( 'frontend-checklist', array('Frontend_Checklist', 'output'));
+add_action('plugins_loaded', array('Frontend_Checklist', 'init'));
 add_action('wp_enqueue_scripts', array('Frontend_Checklist', 'add_js'));
-add_shortcode( 'frontend-checklist', array('Frontend_Checklist', 'output') );
 register_uninstall_hook(__FILE__, array('Frontend_Checklist', 'uninstall'));
- 
+
+
+
 
 
 class Frontend_Checklist {
@@ -68,7 +70,7 @@ class Frontend_Checklist {
 				$output .= '<p><input id="frontend-checklist-todo-'.$cnt.'" type="checkbox"';
 				if (!isset($atts['cookie']) || $atts['cookie'] != 'off') {
 					$output .= ' onchange="frontend_checklist_save_cookie()"';
-					if (isset($_COOKIE['frontend_checklist']) && is_numeric($_COOKIE['frontend_checklist']) && ($_COOKIE['frontend_checklist'] & pow(2, $cnt)) > 0) {
+					if (isset($_COOKIE['frontend_checklist'])  && ($_COOKIE['frontend_checklist'] & pow(2, $cnt)) > 0) {
 						$output .= ' checked';
 					}
 				}
@@ -79,6 +81,13 @@ class Frontend_Checklist {
 	}
 	
 	
+	
+	public static  function init() {
+		$plugin_dir = basename(dirname(__FILE__));
+		load_plugin_textdomain( 'frontend-checklist', '', $plugin_dir . '/languages/' );
+	}
+	
+	
 	public static function add_js() {
 		wp_enqueue_script('frontend-checklist', plugins_url('frontend-checklist.js', __FILE__));
 	}
@@ -86,6 +95,7 @@ class Frontend_Checklist {
 	
 	static public function uninstall()  {
 		delete_option('frontend-checklist-options');
+		delete_option('frontend-checklist-count');
 	}
 
 
