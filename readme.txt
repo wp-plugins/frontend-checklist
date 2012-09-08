@@ -14,7 +14,7 @@ EN: Create a HTML or PDF checklist for your visitors, which can be saved. DE: Er
 
 = EN: =
 
-With Frontend Checklist, you can create a HTML or PDF-Checklist for your vistors. The status of the HTML-Checklist can be saved via Cookie. Your visitors can always come back and continue with the checklist.
+With Frontend Checklist, you can create a HTML or PDF-Checklist for your visitors. The status of the HTML-Checklist can be saved via Cookie. Your visitors can always come back and continue with the checklist.
 
 You can see a [Live-Example of the checklist](http://www.transsib-tipps.de/reise-organisation/transsib-checkliste/) on my (german) page about the  Transsiberian Railway.
 
