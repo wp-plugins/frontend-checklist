@@ -75,6 +75,9 @@ DE: Leider nicht. Der Cookie bekommt Probleme bei mehr als 50 To-Dos.
 
 == Changelog ==
 
+= 1.0.1 =
+* Switched the default language to english / Standard-Sprache auf Englisch umgestellt
+
 = 1.0.0 =
 * Raised maximum number of To-Dos from 20 to 50 / Maximale Anzahl an To-Dos von 20 auf 50 erhöht
 * Plugin is now translatable (POT file is included) / Plugin ist jetzt übersetzbar (POT Datei ist beigelegt)
@@ -94,6 +97,9 @@ DE: Leider nicht. Der Cookie bekommt Probleme bei mehr als 50 To-Dos.
 * Implementation of the HTML-Checklist / Implementierung der HTML-Checkliste
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* You only need to update, if you have a non German page with German text / Du musst nur aktualisieren, wenn du auf einer nicht deutschen Seite deutsche Texte angezeigt bekommst.
 
 = 1.0.0 =
 * You should update if you need more than 20 To-Dos or understand no German / Du solltest aktualisieren, falls du mehr als 20 To-Dos benötigst, oder kein Deutsch verstehst.

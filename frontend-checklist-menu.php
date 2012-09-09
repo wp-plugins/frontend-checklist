@@ -25,7 +25,7 @@ class Frontend_Checklist_Menu {
 		add_settings_section('frontend-checklist-main-section', __('To-Dos', 'frontend-checklist'), array('Frontend_Checklist_Menu', 'dummy'), 'frontend-checklist-options');
 		
 		
-		add_settings_field('frontend-checklist-count-field', __('Anzahl To-Dos (max. 50)', 'frontend-checklist'), array('Frontend_Checklist_Menu', 'CountField'), 'frontend-checklist-options', 'frontend-checklist-count-section');
+		add_settings_field('frontend-checklist-count-field', __('Number of To-Dos (max.50)', 'frontend-checklist'), array('Frontend_Checklist_Menu', 'CountField'), 'frontend-checklist-options', 'frontend-checklist-count-section');
 		
 		for ($i=1;$i<=$total_count;$i++) {
 			add_settings_field('frontend-checklist-to-do-'.$i, $i.'. ', array('Frontend_Checklist_Menu', 'ToDoField'), 'frontend-checklist-options', 'frontend-checklist-main-section');
@@ -48,9 +48,9 @@ class Frontend_Checklist_Menu {
 		?>
 		<div class="wrap">
 		<h2><?php _e('Frontend Checklist', 'frontend-checklist'); ?></h2>
-		<p><?php _e('Herzlich Willkommen zu Frontend Checklist! Gib einfach im ersten Feld die gewünschte Anzahl an To-Dos an. Schreib dann die  ToDos untereinander in die Felder, ohne Lücken zu lassen. Du kannst auch HTML verwenden.', 'frontend-checklist'); ?></p>
-		<p><?php _e('Zum Ausgeben der HTML Checkliste einfach den Tag <code>[frontend-checklist]</code> im Editor an der gewünschten Stelle eingeben.<br />Sollen die abgehakten ToDos nicht gespeichert werden, kann dieser Code benutzt werden: <code>[frontend-checklist cookie="off"]</code><br />Link auf eine PDF-Checkliste: <code>[frontend-checklist type="pdf" title="Meine Checkliste" linktext="Zur Checkliste"]</code>. Der Title erscheint in der PDF-Datei als Überschrift.', 'frontend-checklist'); ?></p>
-		<p><?php _e('Sollte dir das Plugin gefallen und du einen Blog haben, wo es thematisch passt, würde ich mich über eine Vorstellung des Plugins sehr freuen. Mehr Infos zum Plugin und zu meiner Arbeit als Webentwickler gibt es auf <a href="http://www.j-breuer.de/blog/" target="_blank">meinem Blog</a>. Ich freue mich jederzeit über Vorschläge zur Verbesserung des Plugins.', 'frontend-checklist'); ?></p>
+		<p><?php _e('Welcome to Frontend Checklist. Just enter the number of To-Dos in the first field. Write the To-Dos into the other fields without leaving a field blank. You can also use HTML, if you want.', 'frontend-checklist'); ?></p>
+		<p><?php _e('To output the HTML checklist, just enter <code>[frontend-checklist]</code> into the editor at any place.<br />If you don\'t want that the status of the checklist is saved via cookie, you can use this code: <code>[frontend-checklist cookie=\"off\"]</code><br />Link to the PDF-Checklist: <code>[frontend-checklist type="pdf" title="My Checklist" linktext="To the Checklist"]</code>. The Title is the headline in the PDF file.', 'frontend-checklist'); ?></p>
+		<p><?php _e('If you like the plugin and if you have a blog where it suits, I would appreciate a presentation of the plugin. You can find more about the plugin and my work as a web developer on  <a href="http://www.j-breuer.de/blog/" target="_blank">my blog (German)</a>. I always appreciate ideas about how to improve the plugin.', 'frontend-checklist'); ?></p>
 		
 		<form action="options.php" method="post">
 		<?php settings_fields('frontend-checklist-options'); ?>
