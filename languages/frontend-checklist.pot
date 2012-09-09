@@ -1,0 +1,58 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Frontend Checklist 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-08 15:44+0100\n"
+"PO-Revision-Date: 2012-09-08 15:45+0100\n"
+"Last-Translator: \n"
+"Language-Team: Jonas Breuer <kontakt@j-breuer.de>\n"
+"Language: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_ngettext:1,2\n"
+"X-Poedit-Basepath: C:\\develop\\j-breuer\\frontend-checklist\\wordpress.org"
+"\\trunk\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: C:\\develop\\j-breuer\\frontend-checklist\\wordpress."
+"org\\trunk\n"
+
+#: C:\develop\j-breuer\frontend-checklist\wordpress.org\trunk/frontend-checklist-menu.php:25
+msgid "To-Dos"
+msgstr ""
+
+#: C:\develop\j-breuer\frontend-checklist\wordpress.org\trunk/frontend-checklist-menu.php:28
+msgid "Anzahl To-Dos (max. 50)"
+msgstr ""
+
+#: C:\develop\j-breuer\frontend-checklist\wordpress.org\trunk/frontend-checklist-menu.php:39
+#: C:\develop\j-breuer\frontend-checklist\wordpress.org\trunk/frontend-checklist-menu.php:50
+msgid "Frontend Checklist"
+msgstr ""
+
+#: C:\develop\j-breuer\frontend-checklist\wordpress.org\trunk/frontend-checklist-menu.php:51
+msgid ""
+"Herzlich Willkommen zu Frontend Checklist! Füge einfach eine beliebige "
+"Anzahl an ToDos untereinander ein, ohne Lücken zu lassen. Du kannst auch "
+"HTML verwenden."
+msgstr ""
+
+#: C:\develop\j-breuer\frontend-checklist\wordpress.org\trunk/frontend-checklist-menu.php:52
+msgid ""
+"Zum Ausgeben der HTML Checkliste einfach den Tag <code>[frontend-checklist]</"
+"code> im Editor an der gewünschten Stelle eingeben.<br />Sollen die "
+"abgehakten ToDos nicht gespeichert werden, kann dieser Code benutzt werden: "
+"<code>[frontend-checklist cookie=\"off\"]</code><br />Link auf eine PDF-"
+"Checkliste: <code>[frontend-checklist type=\"pdf\" title=\"Meine Checkliste"
+"\" linktext=\"Zur Checkliste\"]</code>. Der Title erscheint in der PDF-Datei "
+"als Überschrift."
+msgstr ""
+
+#: C:\develop\j-breuer\frontend-checklist\wordpress.org\trunk/frontend-checklist-menu.php:55
+msgid ""
+"Sollte dir das Plugin gefallen und du einen Blog haben, wo es thematisch "
+"passt, würde ich mich über eine Vorstellung des Plugins sehr freuen. Mehr "
+"Infos zum Plugin und zu meiner Arbeit als Webentwickler gibt es auf <a href="
+"\"http://www.j-breuer.de/blog/\" target=\"_blank\">meinem Blog</a>. Ich "
+"freue mich jederzeit über Vorschläge zur Verbesserung des Plugins."
+msgstr ""
