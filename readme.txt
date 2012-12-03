@@ -67,6 +67,12 @@ EN: Unfournately not. The cookie gets problems when creating more than 50 To-Dos
 DE: Leider nicht. Der Cookie bekommt Probleme bei mehr als 50 To-Dos.
 
 
+= EN: Is it possible to create multiple checlists? DE: Kann man mehrere Checklisten erstellen? =
+
+EN: Not yet, but I'm planning to include this feature.
+DE: Noch nicht, aber ich plane das noch einzubauen.
+
+
 == Screenshots ==
 
 1. Configure Frontend Checklist
