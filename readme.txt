@@ -3,7 +3,7 @@ Contributors: JonasBreuer
 Donate link: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 Tags: checklist, frontend, todo, to-do, list, checkliste, liste, aufgaben
 Requires at least: 2.8
-Tested up to: 3.4.2
+Tested up to: 3.5
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -74,6 +74,9 @@ DE: Leider nicht. Der Cookie bekommt Probleme bei mehr als 50 To-Dos.
 3. PDF-Checklist
 
 == Changelog ==
+
+= 1.0.2 =
+* Wordpress 3.5 compatiblity / Kompatibel mit Wordpress 3.5
 
 = 1.0.1 =
 * Switched the default language to english / Standard-Sprache auf Englisch umgestellt
