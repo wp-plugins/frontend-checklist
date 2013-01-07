@@ -8,15 +8,15 @@ Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-EN: Create a HTML or PDF checklist for your visitors, which can be saved. DE: Erstelle eine speicherbare HTML oder PDF Checkliste für deine Besucher.
+EN: Create HTML or PDF checklists for your visitors, which can be saved. DE: Erstelle speicherbare HTML oder PDF Checklisten für deine Besucher.
 
 == Description ==
 
 = EN: =
 
-With Frontend Checklist, you can create a HTML or PDF-Checklist for your visitors. The status of the HTML-Checklist can be saved via Cookie. Your visitors can always come back and continue with the checklist.
+With Frontend Checklist, you can create HTML or PDF-Checklists for your visitors. The status of the HTML-Checklists can be saved via Cookie. Your visitors can always come back and continue with the checklists.
 
-You can see a [Live-Example of the checklist](http://www.transsib-tipps.de/reise-organisation/transsib-checkliste/) on my (german) page about the  Transsiberian Railway.
+You can see a [Live-Example of a checklist](http://www.transsib-tipps.de/reise-organisation/transsib-checkliste/) on my (german) page about the  Transsiberian Railway.
 
 For creating the PDF-Checklist, I'm using FDPF (http://www.fpdf.org/). Thanks to Olivier Plathey for this great library.
 
@@ -25,11 +25,11 @@ If you have questions or problems, just leave a comment on the [Plugin page](htt
 
 = DE: =
 
-Mit Frontend Checklist kannst du eine HTML- oder PDF-Checkliste für deine Besucher erzeugen. Der Status der HTML-Checkliste kann per Cookie gespeichert werden. So können deine Besucher jederzeit zurückkehren und die Checkliste weiter abhaken.
+Mit Frontend Checklist kannst du HTML- oder PDF-Checklisten für deine Besucher erzeugen. Der Status der HTML-Checklisten kann per Cookie gespeichert werden. So können deine Besucher jederzeit zurückkehren und die Checklisten weiter abhaken.
 
-Ein [Live-Beispiel der Checkliste](http://www.transsib-tipps.de/reise-organisation/transsib-checkliste/) kann auf meiner Seite zur Transsibirischen Eisenbahn angesehen werden.
+Ein [Live-Beispiel einer Checkliste](http://www.transsib-tipps.de/reise-organisation/transsib-checkliste/) kann auf meiner Seite zur Transsibirischen Eisenbahn angesehen werden.
 
-Für die Erzeugung der PDF-Checkliste wird FPDF verwendet (http://www.fpdf.org/). Vielen Dank an Olivier Plathey für diese tolle Bibliothek.
+Für die Erzeugung der PDF-Checklisten wird FPDF verwendet (http://www.fpdf.org/). Vielen Dank an Olivier Plathey für diese tolle Bibliothek.
 
 Bei Fragen oder Problemen hinterlasse einfach einen Kommentar auf der [Plugin Seite](http://www.j-breuer.de/wordpress-plugins/frontend-checklist/). Ich helfe gerne.
 
@@ -67,10 +67,10 @@ EN: Unfournately not. The cookie gets problems when creating more than 50 To-Dos
 DE: Leider nicht. Der Cookie bekommt Probleme bei mehr als 50 To-Dos.
 
 
-= EN: Is it possible to create multiple checlists? DE: Kann man mehrere Checklisten erstellen? =
+= EN: Is it possible to create multiple checklists? DE: Kann man mehrere Checklisten erstellen? =
 
-EN: Not yet, but I'm planning to include this feature.
-DE: Noch nicht, aber ich plane das noch einzubauen.
+EN: Yes, you can create as many checklists as you want.
+DE: Ja, du kannst so viele Checklisten erstellen, wie du möchtest.
 
 
 == Screenshots ==
@@ -80,6 +80,9 @@ DE: Noch nicht, aber ich plane das noch einzubauen.
 3. PDF-Checklist
 
 == Changelog ==
+
+= 2.0.0 =
+* Create multiple checklists / Mehrere Checklisten erstellen
 
 = 1.0.2 =
 * Wordpress 3.5 compatiblity / Kompatibel mit Wordpress 3.5
@@ -106,6 +109,9 @@ DE: Noch nicht, aber ich plane das noch einzubauen.
 * Implementation of the HTML-Checklist / Implementierung der HTML-Checkliste
 
 == Upgrade Notice ==
+
+= 2.0.0 =
+* You should update if you want to create multiple checklists. / Du solltest aktualisieren, falls du mehrere Checklisten erstellen möchtest.
 
 = 1.0.1 =
 * You only need to update, if you have a non German page with German text / Du musst nur aktualisieren, wenn du auf einer nicht deutschen Seite deutsche Texte angezeigt bekommst.
