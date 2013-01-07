@@ -186,8 +186,8 @@ class Frontend_Checklist {
 		
 		//if the user has the old general cookie, we move it to list 1, so we have a good chance that the checklist status doesn't break when updating
 		if (isset($_COOKIE['frontend_checklist'])) {
-			setcookie('frontend-checklist-1', $_COOKIE['frontend_checklist'], time()+60*60*24*30*12*100, "/");
-			setcookie('frontend_checklist', '', time()-100, "/");
+			setcookie('frontend-checklist-1', $_COOKIE['frontend_checklist'], time()+60*60*24*30*12*100);
+			setcookie('frontend_checklist', '', time()-100);
 		}
 	}
 	
