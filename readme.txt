@@ -23,8 +23,8 @@ For creating the PDF-Checklist, I'm using FDPF (http://www.fpdf.org/). Thanks to
 If you have questions or problems, just leave a comment on the [Plugin page](http://www.j-breuer.de/wordpress-plugins/frontend-checklist/). I'm always glad to help.
 
 
-*"My client's love Frontend Checklist. Frontend Checklist's integration into WordPress helps our client's better manage the security of their websites. Kudos on the awesome plugin!*
-Jim Walker, [The Hack Repair Guy](http://thehackrepairguy.com/)"
+*"My client's love Frontend Checklist. Frontend Checklist's integration into WordPress helps our client's better manage the security of their websites. Kudos on the awesome plugin!"*
+Jim Walker, [The Hack Repair Guy](http://thehackrepairguy.com/)
 
 
 = DE: =
