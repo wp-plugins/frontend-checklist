@@ -24,7 +24,7 @@ If you have questions or problems, just leave a comment on the [Plugin page](htt
 
 
 *"My client's love Frontend Checklist. Frontend Checklist's integration into WordPress helps our client's better manage the security of their websites. Kudos on the awesome plugin!*
-- Jim Walker, [The Hack Repair Guy](http://thehackrepairguy.com/)"
+Jim Walker, [The Hack Repair Guy](http://thehackrepairguy.com/)"
 
 
 = DE: =
