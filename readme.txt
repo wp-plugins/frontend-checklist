@@ -23,6 +23,10 @@ For creating the PDF-Checklist, I'm using FDPF (http://www.fpdf.org/). Thanks to
 If you have questions or problems, just leave a comment on the [Plugin page](http://www.j-breuer.de/wordpress-plugins/frontend-checklist/). I'm always glad to help.
 
 
+*"My client's love Frontend Checklist. Frontend Checklist's integration into WordPress helps our client's better manage the security of their websites. Kudos on the awesome plugin!*
+- Jim Walker, [The Hack Repair Guy](http://thehackrepairguy.com/)"
+
+
 = DE: =
 
 Mit Frontend Checklist kannst du HTML- oder PDF-Checklisten für deine Besucher erzeugen. Der Status der HTML-Checklisten kann per Cookie gespeichert werden. So können deine Besucher jederzeit zurückkehren und die Checklisten weiter abhaken.
