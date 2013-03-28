@@ -5,8 +5,8 @@ PLUGIN URI: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 DESCRIPTION: EN: Create HTML or PDF checklists for your visitors, which can be saved by cookie. DE: Erstelle per Cookie speicherbare HTML oder PDF Checklisten für deine Besucher.
 AUTHOR: Jonas Breuer
 AUTHOR URI: http://www.j-breuer.de
-VERSION: 2.0.0
-Min WP Version: 2.8
+VERSION: 2.1.0
+Min WP Version: 3.0.0
 Max WP Version: 3.5.1
 License: GPL3
 */
@@ -28,7 +28,7 @@ You should have received a copy of the GNU General Public License
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
-define('FRONTEND_CHECKLIST_VERSION', '2.0.0');
+define('FRONTEND_CHECKLIST_VERSION', '2.1.0');
 
 include_once("frontend-checklist-menu.php");
 
@@ -38,8 +38,16 @@ add_shortcode( 'frontend-checklist', array('Frontend_Checklist', 'output'));
 //init session and cookies
 add_action('plugins_loaded', array('Frontend_Checklist', 'initPlugin'));
 
-//add js to save cookie when checking items
+//add js to save status when checking items
 add_action('wp_enqueue_scripts', array('Frontend_Checklist', 'add_js'));
+
+//save status in user-account if not using cookies
+add_action('wp_ajax_fc_checkbox_changed', array('Frontend_Checklist', 'changedAjax'));
+add_action('wp_ajax_nopriv_fc_checkbox_changed', array('Frontend_Checklist', 'changedAjax'));
+
+//load status from user account if not using cookies
+add_action('wp_ajax_fc_load_status', array('Frontend_Checklist', 'loadAjax'));
+add_action('wp_ajax_nopriv_fc_load_status', array('Frontend_Checklist', 'loadAjax'));
 
 //check if the plugin has been updated and perform update tasks
 add_action('init', array('Frontend_Checklist', 'update'));
@@ -91,46 +99,82 @@ class Frontend_Checklist {
 		
 		//HTML checklist
 		} else {
+			$cookie = 1;
+			$cookie_lifetime_days = 365;
+			
+			if (isset($atts['cookie']) && $atts['cookie'] == 'off') $cookie = 0;
+			if (isset($atts['days'])) $cookie_lifetime_days = (int)$atts['days'];
 			
 			$i = 0;
 			foreach ($items as $item) {
 				if ($item == '') break;
-				$output .= '<p><input id="frontend-checklist-'.$item['fc_listID'].'-item-'.$i.'" type="checkbox"';
-				if (!isset($atts['cookie']) || $atts['cookie'] != 'off') {
-					$output .= ' onchange="frontend_checklist_save_cookie('.$item['fc_listID'].')"';
-					if (isset($_COOKIE['frontend-checklist-'.$item['fc_listID']])  && ($_COOKIE['frontend-checklist-'.$item['fc_listID']] & pow(2, $i)) > 0) {
-						$output .= ' checked';
-					}
-				}
-				$output .= '> '.$item['text'].'</p>';
+				$output .= '<p><label><input type="checkbox" id="frontend-checklist-'.$item['fc_listID'].'-item-'.$i.'" onchange="frontend_checklist_checkbox_changed('.$item['fc_listID'].', '.$cookie.', '.$cookie_lifetime_days.')"> '.$item['text'].'</label></p>';
 				$i += 1;
 			}
+			
+			$output .= '<script type="text/javascript">';
+			$output .= 'frontend_checklist_load_status('.$item['fc_listID'].', '.$cookie.');';
+			$output .= '</script>';
 		}
 		return $output;
 	}
 	
-	public static function activation() {
-		global $wpdb;
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		
-		$sql = 'CREATE TABLE IF NOT EXISTS '.$wpdb->prefix.'fc_lists (
-					fc_listID int(10) unsigned NOT NULL AUTO_INCREMENT,
-					name varchar(128) NOT NULL,
-					description varchar(1024) NOT NULL,
-					PRIMARY KEY  (fc_listID)
-				);';
-		dbDelta($sql);
+	
+	public static  function initPlugin() {
+	
+		//load language file
+		$plugin_dir = basename(dirname(__FILE__));
+		load_plugin_textdomain( 'frontend-checklist', '', $plugin_dir . '/languages/' );
 		
-		$sql = 'CREATE TABLE IF NOT EXISTS '.$wpdb->prefix.'fc_items (
-					fc_itemID int(10) unsigned NOT NULL AUTO_INCREMENT,
-					fc_listID int(10) unsigned NOT NULL,
-					text varchar(1024) NOT NULL,
-					PRIMARY KEY  (fc_itemID),
-					KEY (fc_listID)
-				);';
-		dbDelta($sql);
+		
+		//load session for pdf-checklist
+		if (!session_id()) session_start();
+		
+		//if the user has the old general cookie, we move it to list 1, so we have a good chance that the checklist status doesn't break when updating
+		if (isset($_COOKIE['frontend_checklist'])) {
+			setcookie('frontend-checklist-1', $_COOKIE['frontend_checklist'], time()+60*60*24*30*12*100);
+			setcookie('frontend_checklist', '', time()-100);
+		}
 	}
 	
+	
+	public static function add_js() {
+		wp_enqueue_script('frontend-checklist', plugins_url('frontend-checklist.js', __FILE__), array('jquery'));
+		
+		wp_localize_script( 'frontend-checklist', 'frontendChecklist', 
+			array( 
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			)
+		);
+	}
+	
+	
+	public static function changedAjax() {
+		$user_ID = get_current_user_id();
+		if ($user_ID == 0) die;
+		
+		$fc_listID = (int)$_POST['fc_listID'];
+		$sum = (int)$_POST['sum'];
+		
+		update_user_meta($user_ID, 'frontend-checklist-'.$fc_listID, $sum);
+		
+		die;
+	}
+	
+	
+	public static function loadAjax() {
+		$user_ID = get_current_user_id();
+		if ($user_ID == 0) die;
+		
+		$fc_listID = (int)$_POST['fc_listID'];
+		
+		$single = true;
+		$sum = get_user_meta($user_ID, 'frontend-checklist-'.$fc_listID, $single);
+		echo $sum;
+		
+		die;
+	}
 	
 	
 	public static function update() {
@@ -174,26 +218,26 @@ class Frontend_Checklist {
 	}
 	
 	
-	
-	public static  function initPlugin() {
-	
-		//load language file
-		$plugin_dir = basename(dirname(__FILE__));
-		load_plugin_textdomain( 'frontend-checklist', '', $plugin_dir . '/languages/' );
+	public static function activation() {
+		global $wpdb;
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		
-		//load session for pdf-checklist
-		if (!session_id()) session_start();
+		$sql = 'CREATE TABLE '.$wpdb->prefix.'fc_lists (
+					fc_listID int(10) unsigned NOT NULL AUTO_INCREMENT,
+					name varchar(128) NOT NULL,
+					description varchar(1024) NOT NULL,
+					PRIMARY KEY  (fc_listID)
+				);';
+		dbDelta($sql);
 		
-		//if the user has the old general cookie, we move it to list 1, so we have a good chance that the checklist status doesn't break when updating
-		if (isset($_COOKIE['frontend_checklist'])) {
-			setcookie('frontend-checklist-1', $_COOKIE['frontend_checklist'], time()+60*60*24*30*12*100);
-			setcookie('frontend_checklist', '', time()-100);
-		}
-	}
-	
-	
-	public static function add_js() {
-		wp_enqueue_script('frontend-checklist', plugins_url('frontend-checklist.js', __FILE__));
+		$sql = 'CREATE TABLE '.$wpdb->prefix.'fc_items (
+					fc_itemID int(10) unsigned NOT NULL AUTO_INCREMENT,
+					fc_listID int(10) unsigned NOT NULL,
+					text varchar(1024) NOT NULL,
+					PRIMARY KEY  (fc_itemID),
+					KEY (fc_listID)
+				);';
+		dbDelta($sql);
 	}
 	
 	
@@ -203,9 +247,9 @@ class Frontend_Checklist {
 		$wpdb->query($sql);
 		$sql = 'DROP TABLE '.$wpdb->prefix.'fc_items;';
 		$wpdb->query($sql);
+		$sql = 'DELETE FROM '.$wpdb->usermeta.' WHERE meta_key LIKE "frontend-checklist%"';
+		$wpdb->query($sql);
 		
-		delete_option('frontend-checklist-options');
-		delete_option('frontend-checklist-count');
 		delete_option('frontend-checklist-version');
 	}
 

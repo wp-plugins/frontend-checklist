@@ -1,8 +1,8 @@
-﻿=== Frontend Checklist ===
+=== Frontend Checklist ===
 Contributors: JonasBreuer
 Donate link: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 Tags: checklist, frontend, todo, to-do, list, checkliste, liste, aufgaben
-Requires at least: 2.8
+Requires at least: 3.0.0
 Tested up to: 3.5.1
 Stable tag: trunk
 License: GPLv3 or later
@@ -21,10 +21,6 @@ You can see a [Live-Example of a checklist](http://www.transsib-tipps.de/reise-o
 For creating the PDF-Checklist, I'm using FDPF (http://www.fpdf.org/). Thanks to Olivier Plathey for this great library.
 
 If you have questions or problems, just leave a comment on the [Plugin page](http://www.j-breuer.de/wordpress-plugins/frontend-checklist/). I'm always glad to help.
-
-
-*"My client's love Frontend Checklist. Frontend Checklist's integration into WordPress helps our client's better manage the security of their websites. Kudos on the awesome plugin!"*
-Jim Walker, [The Hack Repair Guy](http://thehackrepairguy.com/)
 
 
 = DE: =
@@ -84,6 +80,13 @@ DE: Ja, du kannst so viele Checklisten erstellen, wie du möchtest.
 3. PDF-Checklist
 
 == Changelog ==
+
+= 2.1.0 =
+* Checklist status can also be saved in the user database / Der Checklist Status kann auch in der User-Datenbank gespeichert werden
+* Plugin is not longer affected by caching plugins / Das Plugin wird nicht mehr von Caching Plugins gestört
+* Cookie lifetime can be changed / Cookie-Lebensdauer kann geändert werden
+* The class "checked" ist added to all checked rows and can be styled vis css / Die Klasse "checked" wird allen abgehakten Zeilen hinzugefügt und kann per CSS gestylt werden
+* The whole label is clickable / Die gesamte Beschriftung ist klickbar
 
 = 2.0.0 =
 * Create multiple checklists / Mehrere Checklisten erstellen

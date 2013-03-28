@@ -20,7 +20,7 @@ class Frontend_Checklist_Menu {
 		if (!isset($_GET['action'])) $_GET['action'] = '';
 	
 		switch ($_GET['action']) {
-		
+				
 			case 'new':
 				self::newPage();
 				break;
@@ -45,7 +45,7 @@ class Frontend_Checklist_Menu {
 				if (is_numeric($_GET['id'])) self::deletePerform();
 				self::overviewPage();
 				break;
-				
+			
 			default:
 				self::overviewPage();
 		
@@ -58,6 +58,7 @@ class Frontend_Checklist_Menu {
 	static public function overviewPage() {
 	
 		global $wpdb;
+		
 		$sql = 'SELECT fc_listID, name, description FROM '.$wpdb->prefix.'fc_lists ORDER BY fc_listID ASC';
 		$lists = $wpdb->get_results($sql, ARRAY_A);
 		
@@ -65,7 +66,10 @@ class Frontend_Checklist_Menu {
 		<div class="wrap">
 		<h2><?php _e('Frontend Checklist', 'frontend-checklist'); ?></h2>
 		<p><?php _e('Welcome to Frontend Checklist. Just click New Checklist or Edit on an existing checklist to manage your checklists', 'frontend-checklist'); ?></p>
-		<p><?php _e('To output a HTML checklist, just enter <code>[frontend-checklist name="Standard"]</code> (replace the name attribute for other checklist names) into the editor at any place.<br />If you don\'t want that the status of the checklist is saved via cookie, you can use this code: <code>[frontend-checklist name="Standard" cookie="off"]</code><br />Link to the PDF-Checklist: <code>[frontend-checklist name="Standard" type="pdf" title="My Checklist" linktext="To the Checklist"]</code>. The Title is the headline in the PDF file.', 'frontend-checklist'); ?></p>
+		<p><?php _e('To output a HTML checklist, just enter <code>[frontend-checklist name="Standard"]</code> (replace the name attribute for other checklist names) into the editor at any place.', 'frontend-checklist'); ?></p>
+		<p><?php _e('If you don\'t want that the status of the checklist is saved via cookie, you can use this code: <code>[frontend-checklist name="Standard" cookie="off"]</code> If cookies are off, the plugin will save the status of the checklist for logged in users in the database.', 'frontend-checklist'); ?></p>
+		<p><?php _e('To control the cookie lifetime, use the days attribute: <code>[frontend-checklist name="Standard" days="180"]</code> (default is 365 days)', 'frontend-checklist'); ?></p>
+		<p><?php _e('Link to the PDF-Checklist: <code>[frontend-checklist name="Standard" type="pdf" title="My Checklist" linktext="To the Checklist"]</code>. The Title is the headline in the PDF file.', 'frontend-checklist'); ?></p>
 		<p><?php _e('If you like the plugin and if you have a blog where it suits, I would appreciate a presentation of the plugin. You can find more about the plugin and my work as a web developer on  <a href="http://www.j-breuer.de/blog/" target="_blank">my blog (German)</a>. I always appreciate ideas about how to improve the plugin.', 'frontend-checklist'); ?></p>
 		<p><a href="options-general.php?page=frontend-checklist&action=new"><strong><?php _e('New Checklist', 'frontend-checklist'); ?></strong></a></p>
 		
