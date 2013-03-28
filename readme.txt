@@ -87,6 +87,7 @@ DE: Ja, du kannst so viele Checklisten erstellen, wie du möchtest.
 * Cookie lifetime can be changed / Cookie-Lebensdauer kann geändert werden
 * The class "checked" ist added to all checked rows and can be styled vis css / Die Klasse "checked" wird allen abgehakten Zeilen hinzugefügt und kann per CSS gestylt werden
 * The whole label is clickable / Die gesamte Beschriftung ist klickbar
+* Removed Support for WP < 3.0.0 / Support für WP < 3.0.0 entfernt
 
 = 2.0.0 =
 * Create multiple checklists / Mehrere Checklisten erstellen
