@@ -81,6 +81,9 @@ DE: Ja, du kannst so viele Checklisten erstellen, wie du möchtest.
 
 == Changelog ==
 
+= 2.1.1 =
+* Fixed a bug where the same checklist was tracked separately when placed on mulitple sub-pages / Bug gefixt, bei dem die gleiche Checkliste getrennt getrackt wurde, wenn sie sich auf mehreren Unterseiten befand
+
 = 2.1.0 =
 * Checklist status can also be saved in the user database / Der Checklist Status kann auch in der User-Datenbank gespeichert werden
 * Plugin is not longer affected by caching plugins / Das Plugin wird nicht mehr von Caching Plugins gestört

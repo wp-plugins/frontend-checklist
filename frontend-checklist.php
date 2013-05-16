@@ -5,14 +5,14 @@ PLUGIN URI: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 DESCRIPTION: EN: Create HTML or PDF checklists for your visitors, which can be saved by cookie. DE: Erstelle per Cookie speicherbare HTML oder PDF Checklisten für deine Besucher.
 AUTHOR: Jonas Breuer
 AUTHOR URI: http://www.j-breuer.de
-VERSION: 2.1.0
+VERSION: 2.1.1
 Min WP Version: 3.0.0
 Max WP Version: 3.5.1
 License: GPL3
 */
 
 
-/* Copyright 2012 Jonas Breuer (email : kontakt@j-breuer.de)
+/* Copyright 2013 Jonas Breuer (email : kontakt@j-breuer.de)
  
 This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License, version 3, as
@@ -28,7 +28,7 @@ You should have received a copy of the GNU General Public License
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
-define('FRONTEND_CHECKLIST_VERSION', '2.1.0');
+define('FRONTEND_CHECKLIST_VERSION', '2.1.1');
 
 include_once("frontend-checklist-menu.php");
 

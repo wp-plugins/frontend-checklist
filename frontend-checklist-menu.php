@@ -71,6 +71,7 @@ class Frontend_Checklist_Menu {
 		<p><?php _e('To control the cookie lifetime, use the days attribute: <code>[frontend-checklist name="Standard" days="180"]</code> (default is 365 days)', 'frontend-checklist'); ?></p>
 		<p><?php _e('Link to the PDF-Checklist: <code>[frontend-checklist name="Standard" type="pdf" title="My Checklist" linktext="To the Checklist"]</code>. The Title is the headline in the PDF file.', 'frontend-checklist'); ?></p>
 		<p><?php _e('If you like the plugin and if you have a blog where it suits, I would appreciate a presentation of the plugin. You can find more about the plugin and my work as a web developer on  <a href="http://www.j-breuer.de/blog/" target="_blank">my blog (German)</a>. I always appreciate ideas about how to improve the plugin.', 'frontend-checklist'); ?></p>
+		<?php if (defined('WPLANG') && WPLANG == 'de_DE') echo '<p>Wenn du Geld als Affiliate verdienst, ist vielleicht auch mein Plugin <a href="http://www.j-breuer.de/wordpress-plugins/affiliate-power/?utm_campaign=frontend_checklist" target="_blank">Affiliate Power</a> für dich interessant.</p>'; ?>
 		<p><a href="options-general.php?page=frontend-checklist&action=new"><strong><?php _e('New Checklist', 'frontend-checklist'); ?></strong></a></p>
 		
 		<table class="widefat fixed" cellspacing="0">

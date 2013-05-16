@@ -15,7 +15,7 @@ function frontend_checklist_checkbox_changed(fc_listID, cookie, cookie_lifetime_
 	if (cookie == 1) {
 		var expires = new Date();
 		expires.setDate(expires.getDate() + cookie_lifetime_days);
-		document.cookie = 'frontend-checklist-' + fc_listID + '=' + sum + "; expires=" + expires.toGMTString();
+		document.cookie = 'frontend-checklist-' + fc_listID + '=' + sum + "; expires=" + expires.toGMTString() + "; path=/";
 	}
 	else {
 		var data = { action: 'fc_checkbox_changed', fc_listID: fc_listID, sum: sum};
