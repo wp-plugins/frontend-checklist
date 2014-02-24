@@ -3,7 +3,7 @@ Contributors: JonasBreuer
 Donate link: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 Tags: checklist, frontend, todo, to-do, list, checkliste, liste, aufgaben
 Requires at least: 3.0.0
-Tested up to: 3.5.1
+Tested up to: 3.8.1
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,6 +21,10 @@ You can see a [Live-Example of a checklist](http://www.transsib-tipps.de/reise-o
 For creating the PDF-Checklist, I'm using FDPF (http://www.fpdf.org/). Thanks to Olivier Plathey for this great library.
 
 If you have questions or problems, just leave a comment on the [Plugin page](http://www.j-breuer.de/wordpress-plugins/frontend-checklist/). I'm always glad to help.
+
+Thanks to the Translators:
+* Ukrainian, Polnish, Russian: [Julia Denys](http://juliachecklist.com)
+* Serbo-Croatian: [Borisa Djuraskovic from Webhostinghub](http://www.webhostinghub.com)
 
 
 = DE: =
@@ -80,6 +84,12 @@ DE: Ja, du kannst so viele Checklisten erstellen, wie du möchtest.
 3. PDF-Checklist
 
 == Changelog ==
+
+= 2.2.0 =
+* Fixed Slashes when saving hecklist with magic quotes activated
+* Larger input fields for the cklist items
+* Full WP 3.8.1 compatibility
+* Added Ukrainian, Polnish, Russian and Serbo-Croatian language files
 
 = 2.1.1 =
 * Fixed a bug where the same checklist was tracked separately when placed on mulitple sub-pages / Bug gefixt, bei dem die gleiche Checkliste getrennt getrackt wurde, wenn sie sich auf mehreren Unterseiten befand

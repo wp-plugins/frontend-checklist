@@ -131,7 +131,7 @@ class Frontend_Checklist_Menu {
 						if ($i >= 10) $style = 'display:none;';
 						else $style = 'display:block;';
 						?>
-						<tr valign="top" id="fc-item-<?php echo $i; ?>" style="<?php echo $style; ?>"><th scope="row"><?php echo ($i+1) ?>.</th><td><input type="text" name="items[]" size="40" onfocus="document.getElementById('fc-item-<?php echo $i+1; ?>').style.display='block';"></td></tr>
+						<tr valign="top" id="fc-item-<?php echo $i; ?>" style="<?php echo $style; ?>"><th scope="row"><?php echo ($i+1) ?>.</th><td><input type="text" name="items[]" size="80" onfocus="document.getElementById('fc-item-<?php echo $i+1; ?>').style.display='block';"></td></tr>
 						<?php 
 					} ?>
 				</tbody></table>
@@ -160,6 +160,8 @@ class Frontend_Checklist_Menu {
 		
 		foreach($_POST['items']  as $item) {
 			if ($item != '') {
+			
+				$item = stripslashes($item);
 			
 				$wpdb->insert(
 					$wpdb->prefix.'fc_items',
@@ -203,7 +205,7 @@ class Frontend_Checklist_Menu {
 					
 						if (!isset($items[$i]['text'])) $items[$i]['text'] = '';
 						?>
-						<tr valign="top" style="<?php echo $style_next; ?>" id="fc-item-<?php echo $i; ?>"><th scope="row"><?php echo ($i+1) ?>.</th><td><input type="text" name="items[]" size="40" value="<?php echo esc_html($items[$i]['text']); ?>" onfocus="document.getElementById('fc-item-<?php echo $i+1; ?>').style.display='block';"></td></tr>
+						<tr valign="top" style="<?php echo $style_next; ?>" id="fc-item-<?php echo $i; ?>"><th scope="row"><?php echo ($i+1) ?>.</th><td><input type="text" name="items[]" size="80" value="<?php echo esc_html($items[$i]['text']); ?>" onfocus="document.getElementById('fc-item-<?php echo $i+1; ?>').style.display='block';"></td></tr>
 						<?php 
 						//only show one empty field
 						if (empty($items[$i]['text'])) $style_next = 'display:none;';

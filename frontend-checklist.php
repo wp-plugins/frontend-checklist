@@ -5,14 +5,14 @@ PLUGIN URI: http://www.j-breuer.de/wordpress-plugins/frontend-checklist/
 DESCRIPTION: EN: Create HTML or PDF checklists for your visitors, which can be saved by cookie. DE: Erstelle per Cookie speicherbare HTML oder PDF Checklisten für deine Besucher.
 AUTHOR: Jonas Breuer
 AUTHOR URI: http://www.j-breuer.de
-VERSION: 2.1.1
+VERSION: 2.2.0
 Min WP Version: 3.0.0
-Max WP Version: 3.5.1
+Max WP Version: 3.8.1
 License: GPL3
 */
 
 
-/* Copyright 2013 Jonas Breuer (email : kontakt@j-breuer.de)
+/* Copyright 2014 Jonas Breuer (email : kontakt@j-breuer.de)
  
 This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License, version 3, as
@@ -28,7 +28,7 @@ You should have received a copy of the GNU General Public License
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
-define('FRONTEND_CHECKLIST_VERSION', '2.1.1');
+define('FRONTEND_CHECKLIST_VERSION', '2.2.0');
 
 include_once("frontend-checklist-menu.php");
 
@@ -108,7 +108,7 @@ class Frontend_Checklist {
 			$i = 0;
 			foreach ($items as $item) {
 				if ($item == '') break;
-				$output .= '<p><label><input type="checkbox" id="frontend-checklist-'.$item['fc_listID'].'-item-'.$i.'" onchange="frontend_checklist_checkbox_changed('.$item['fc_listID'].', '.$cookie.', '.$cookie_lifetime_days.')"> '.$item['text'].'</label></p>';
+				$output .= '<p><label><input type="checkbox" id="frontend-checklist-'.$item['fc_listID'].'-item-'.$i.'" onchange="frontend_checklist_checkbox_changed('.$item['fc_listID'].', '.$cookie.', '.$cookie_lifetime_days.')">'.$item['text'].'</label></p>';
 				$i += 1;
 			}
 			
