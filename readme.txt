@@ -23,8 +23,9 @@ For creating the PDF-Checklist, I'm using FDPF (http://www.fpdf.org/). Thanks to
 If you have questions or problems, just leave a comment on the [Plugin page](http://www.j-breuer.de/wordpress-plugins/frontend-checklist/). I'm always glad to help.
 
 Thanks to the Translators:
+
 * Ukrainian, Polnish, Russian: [Julia Denys](http://juliachecklist.com)
-* Serbo-Croatian: [Borisa Djuraskovic from Webhostinghub](http://www.webhostinghub.com)
+* Serbo-Croatian: [Borisa Djuraskovic](http://www.webhostinghub.com)
 
 
 = DE: =
