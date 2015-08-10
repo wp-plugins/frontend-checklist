@@ -7,7 +7,7 @@ AUTHOR: Jonas Breuer
 AUTHOR URI: http://www.j-breuer.de
 VERSION: 2.2.0
 Min WP Version: 3.0.0
-Max WP Version: 4.0
+Max WP Version: 4.3
 License: GPL3
 */
 
@@ -80,19 +80,21 @@ class Frontend_Checklist {
 		//pdf checklist
 		if (isset($atts['type']) && $atts['type'] == 'pdf') {
 		
-			$_SESSION['frontend-checklist-items'] = $items;
+			$item = $items[0];
+			$listID = $item['fc_listID'];
+			$_SESSION['frontend-checklist-items'][$listID] = $items;
 			
 			if (isset($atts['title']) && !empty($atts['title'])) { 
-				$_SESSION['frontend-checklist-pdf-title'] = $atts['title'];
+				$_SESSION['frontend-checklist-pdf-title'][$listID] = $atts['title'];
 			}  else {
-				$_SESSION['frontend-checklist-pdf-title'] = __('Checklist', 'frontend-checklist');
+				$_SESSION['frontend-checklist-pdf-title'][$listID] = __('Checklist', 'frontend-checklist');
 			}
 		
 			if (!isset($atts['linktext']) || empty($atts['linktext'])) {
 				$atts['linktext'] = __('Checklist', 'frontend-checklist');
 			}
 			
-			$output .= '<a href="'.plugins_url('frontend-checklist-pdf.php', __FILE__).'" target="_blank">';
+			$output .= '<a href="'.plugins_url('frontend-checklist-pdf.php?id='.$item['fc_listID'], __FILE__).'" target="_blank">';
 			$output .= esc_html($atts['linktext']);
 			$output .= '</a>';
 		

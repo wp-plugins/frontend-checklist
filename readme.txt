@@ -86,6 +86,9 @@ DE: Ja, du kannst so viele Checklisten erstellen, wie du möchtest.
 
 == Changelog ==
 
+= 2.2.1 =
+* Bugfix: Multiple PDF checklists on one page
+
 = 2.2.0 =
 * Fixed Slashes when saving hecklist with magic quotes activated
 * Larger input fields for the cklist items
