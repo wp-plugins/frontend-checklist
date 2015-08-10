@@ -1,0 +1,194 @@
+# LANGUAGE (LOCALE) translation for WordPress. 
+# Copyright (C) YEAR WordPress contributors.
+# This file is distributed under the same license as the WordPress package.
+# FIRST AUTHOR , YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Frontend Checklist\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-28 11:45+0100\n"
+"PO-Revision-Date: 2014-02-24 15:37+1000\n"
+"Last-Translator: \n"
+"Language-Team: Jonas Breuer <kontakt@j-breuer.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_ngettext:1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: uk_UA\n"
+"X-Poedit-SearchPath-0: C:\\develop\\j-breuer\\frontend-checklist\\frontend-"
+"checklist\n"
+
+#: frontend-checklist-menu.php:12 frontend-checklist-menu.php:67
+msgid "Frontend Checklist"
+msgstr "Lista kontrolna"
+
+#: frontend-checklist-menu.php:68
+msgid ""
+"Welcome to Frontend Checklist. Just click New Checklist or Edit on an "
+"existing checklist to manage your checklists"
+msgstr ""
+"Witamy we Frontend Checklist. Kliknij przycisk Utworzyć nowy Checklist  lub "
+"Edytować na istniejącym Checklisti, aby zarządzać nimi"
+
+#: frontend-checklist-menu.php:69
+msgid ""
+"To output a HTML checklist, just enter <code>[frontend-checklist name="
+"\"Standard\"]</code> (replace the name attribute for other checklist names) "
+"into the editor at any place."
+msgstr ""
+"Do wyświetlania HTML Checklista, wpisz <code>[frontend-checklist name="
+"\"Standard\"]</code> (wymienić nazwę atrybutu dla innych nazw Checklista) do "
+"edytora w dowolnym miejscu."
+
+#: frontend-checklist-menu.php:70
+msgid ""
+"If you don't want that the status of the checklist is saved via cookie, you "
+"can use this code: <code>[frontend-checklist name=\"Standard\" cookie=\"off"
+"\"]</code> If cookies are off, the plugin will save the status of the "
+"checklist for logged in users in the database."
+msgstr ""
+"Jeśli nie chcesz, aby stan checklist utrzymuje się przez cookie, możesz użyć "
+"tego kodu: <code>[frontend-checklist name=\"Standard\" cookie=\"off\"]</"
+"code>, Jeśli cookies jest wyłączony wtyczka zapisuje stan Checklist tylko "
+"dla zarejestrowanych użytkowników w bazie danych."
+
+#: frontend-checklist-menu.php:71
+msgid ""
+"To control the cookie lifetime, use the days attribute: <code>[frontend-"
+"checklist name=\"Standard\" days=\"180\"]</code> (default is 365 days)"
+msgstr ""
+"Do kontroli ważności cookie, wykorzystywać atrybut dni <code>[frontend-"
+"checklist name=\"Standard\" days=\"180\"]</code> (domyślnie wynosi 365 dni)"
+
+#: frontend-checklist-menu.php:72
+msgid ""
+"Link to the PDF-Checklist: <code>[frontend-checklist name=\"Standard\" type="
+"\"pdf\" title=\"My Checklist\" linktext=\"To the Checklist\"]</code>. The "
+"Title is the headline in the PDF file."
+msgstr ""
+"Link do PDF- Checklist: <code>[frontend-checklist name=\"Standard\" type="
+"\"pdf\" title=\"My Checklist\" linktext=\"To the Checklist\"]</code>. Nazwa "
+"jest tytułem w pliku PDF."
+
+#: frontend-checklist-menu.php:73
+msgid ""
+"If you like the plugin and if you have a blog where it suits, I would "
+"appreciate a presentation of the plugin. You can find more about the plugin "
+"and my work as a web developer on  <a href=\"http://www.j-breuer.de/blog/\" "
+"target=\"_blank\">my blog (German)</a>. I always appreciate ideas about how "
+"to improve the plugin."
+msgstr ""
+"Jeśli podoba ci się wtyczka i masz blog, gdzie to pasuje, byłbym wdzięczny "
+"na prezentację wtyczki. Możesz dowiedzieć się więcej o wtyczce i o mojej "
+"pracy jako web developer na <a href=\"http://www.j-breuer.de/blog/\" target="
+"\"_blank\">my blog (German)</a>. Zawsze doceniam pomysły o poprawie wtyczki."
+
+#: frontend-checklist-menu.php:74
+msgid "New Checklist"
+msgstr "Utwórz nowy Checklist"
+
+#: frontend-checklist-menu.php:79 frontend-checklist-menu.php:87
+#: frontend-checklist-menu.php:121 frontend-checklist-menu.php:192
+msgid "Name"
+msgstr "Nazwa"
+
+#: frontend-checklist-menu.php:80 frontend-checklist-menu.php:88
+#: frontend-checklist-menu.php:122 frontend-checklist-menu.php:193
+msgid "Description"
+msgstr "Opis"
+
+#: frontend-checklist-menu.php:81 frontend-checklist-menu.php:89
+msgid "Syntax"
+msgstr "Składnia"
+
+#: frontend-checklist-menu.php:82 frontend-checklist-menu.php:90
+msgid "Actions"
+msgstr "Działania"
+
+#: frontend-checklist-menu.php:95
+#, php-format
+msgid "Do you really want to delete the checklist %s?"
+msgstr "Czy na pewno chcesz usunąć ten Checklist %s?"
+
+#: frontend-checklist-menu.php:101
+msgid "Edit"
+msgstr "Edytuj"
+
+#: frontend-checklist-menu.php:101
+msgid "Delete"
+msgstr "Usuń"
+
+#: frontend-checklist-menu.php:119 frontend-checklist-menu.php:190
+msgid "List settings"
+msgstr "Lista konfiguracji"
+
+#: frontend-checklist-menu.php:125 frontend-checklist-menu.php:196
+msgid "Items"
+msgstr "Punkty"
+
+#: frontend-checklist-menu.php:126 frontend-checklist-menu.php:197
+msgid ""
+"Just enter a number of items (up to 50) without leaving any fields blank. "
+"New fields will appear automatically. You can use HTML."
+msgstr ""
+"Wystarczy wpisać ilość elementów (do 50), nie pozostawiając żadnego pola "
+"pustym. Nowe pola pojawią się automatycznie. Możesz użyć HTML."
+
+#: frontend-checklist-menu.php:138 frontend-checklist-menu.php:213
+msgid "Save Changes"
+msgstr "Zapisz zmiany"
+
+#: frontend-checklist-menu.php:150 frontend-checklist-menu.php:225
+msgid "unnamed"
+msgstr "bez tytułu"
+
+#: frontend-checklist.php:88 frontend-checklist.php:92
+msgid "Checklist"
+msgstr "Checklist"
+
+#: frontend-checklist.php:194
+msgid "Standard"
+msgstr "Kryterium"
+
+msgid ""
+"To output a HTML checklist, just enter <code>[frontend-checklist name="
+"\"Standard\"]</code> (replace the name attribute for other checklist names) "
+"into the editor at any place.<br />If you don't want that the status of the "
+"checklist is saved via cookie, you can use this code: <code>[frontend-"
+"checklist name=\"Standard\" cookie=\"off\"]</code><br />Link to the PDF-"
+"Checklist: <code>[frontend-checklist name=\"Standard\" type=\"pdf\" title="
+"\"My Checklist\" linktext=\"To the Checklist\"]</code>. The Title is the "
+"headline in the PDF file."
+msgstr ""
+
+msgid "To-Dos"
+msgstr ""
+
+msgid "Number of To-Dos (max.50)"
+msgstr ""
+
+msgid ""
+"Welcome to Frontend Checklist. Just enter the number of To-Dos in the first "
+"field. Write the To-Dos into the other fields without leaving a field blank. "
+"You can also use HTML, if you want."
+msgstr ""
+
+msgid ""
+"Herzlich Willkommen zu Frontend Checklist! Gib einfach im ersten Feld die "
+"gewünschte Anzahl an To-Dos an. Schreib dann die  ToDos untereinander in die "
+"Felder, ohne Lücken zu lassen. Du kannst auch HTML verwenden."
+msgstr ""
+
+msgid ""
+"Sollte dir das Plugin gefallen und du einen Blog haben, wo es thematisch "
+"passt, würde ich mich über eine Vorstellung des Plugins sehr freuen. Mehr "
+"Infos zum Plugin und zu meiner Arbeit als Webentwickler gibt es auf <a href="
+"\"http://www.j-breuer.de/blog/\" target=\"_blank\">meinem Blog</a>. Ich "
+"freue mich jederzeit über Vorschläge zur Verbesserung des Plugins."
+msgstr ""
